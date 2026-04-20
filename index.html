@@ -16,9 +16,12 @@
       <a href="#top" class="nav-logo"><span class="prompt">$</span> binyam<span class="cursor">_</span></a>
       <ul class="nav-links">
         <li><a href="#about">about</a></li>
+        <li><a href="#terminal">terminal</a></li>
+        <li><a href="#services">services</a></li>
         <li><a href="#skills">skills</a></li>
         <li><a href="#experience">experience</a></li>
         <li><a href="#certifications">certs</a></li>
+        <li><a href="#blog">blog</a></li>
         <li><a href="#contact">contact</a></li>
       </ul>
       <button class="nav-toggle" aria-label="Toggle menu">☰</button>
@@ -59,6 +62,33 @@
   </header>
 
   <main class="container">
+    <section id="terminal" class="section">
+      <h2 class="section-title"><span class="hash">#</span> interactive terminal</h2>
+      <p class="lead">Type <code class="inline-code">help</code> to see what's available. Try <code class="inline-code">services</code>, <code class="inline-code">skills</code>, or <code class="inline-code">request</code> to send a consultation.</p>
+      <div class="xterm" id="xterm" role="region" aria-label="Interactive terminal">
+        <div class="xterm-titlebar">
+          <span class="xterm-dot red"></span>
+          <span class="xterm-dot yellow"></span>
+          <span class="xterm-dot green"></span>
+          <span class="xterm-title">binyam@cloud:~</span>
+        </div>
+        <div class="xterm-body" id="xterm-body">
+          <div id="xterm-output"></div>
+          <div class="xterm-input-line">
+            <span class="xterm-prompt">binyam@cloud<span class="muted">:~$</span></span>
+            <input
+              id="xterm-input"
+              class="xterm-input"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+              aria-label="Terminal input"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="about" class="section">
       <h2 class="section-title"><span class="hash">#</span> about</h2>
       <p class="lead">
@@ -72,6 +102,47 @@
         security, and delivery speed — from national identity platforms to hybrid cloud
         integrations.
       </p>
+    </section>
+
+    <section id="services" class="section">
+      <h2 class="section-title"><span class="hash">#</span> services &amp; consulting</h2>
+      <p class="lead">Available for <strong>one-time setup</strong>, <strong>short contracts</strong>, or <strong>long-term consultancy</strong>. Open to discussion.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">☁️</div>
+          <h3>Cloud Deployments</h3>
+          <p>End-to-end architecture and delivery on <strong>AWS</strong> and <strong>GCP</strong> — VPC design, IAM, compute, storage, RDS, Lambda, EventBridge.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⎈</div>
+          <h3>Kubernetes Platforms</h3>
+          <p>Production-grade clusters with <strong>RKE2</strong>, <strong>EKS</strong>, <strong>Argo CD</strong>, Helmfile, and GitOps workflows — including MOSIP/DPI deployments.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🇪🇹</div>
+          <h3>Telecloud &amp; Local Cloud (Ethiopia)</h3>
+          <p>Deployments on <strong>Ethio Telecom Telecloud</strong> and local on-prem environments. Hybrid integrations with AWS / GCP.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📲</div>
+          <h3>SMS Gateway Integration</h3>
+          <p>Integrate <strong>Jasmin SMS Gateway</strong> and <strong>Kannel</strong> with telecom SMSC — for OTP, notifications, identity, and wallet flows.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔐</div>
+          <h3>IPsec Site-to-Site VPN</h3>
+          <p>Secure connectivity for <strong>banks</strong> and private companies — IPsec tunnels between cloud and on-prem, Direct Connect, hybrid routing.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔭</div>
+          <h3>Secure Deploy + E2E Monitoring</h3>
+          <p>Istio service mesh, TLS everywhere, <strong>EFK/ELK</strong> observability, centralized logging, and alerting — from cluster to application layer.</p>
+        </div>
+      </div>
+      <div class="services-cta">
+        <p class="lead"><strong>Engagement models:</strong> one-time project · contract · long-term consultancy · open to discussion.</p>
+        <button class="btn btn-primary" data-open-request>Request a consultation</button>
+      </div>
     </section>
 
     <section id="skills" class="section">
@@ -219,6 +290,19 @@
       </div>
     </section>
 
+    <section id="blog" class="section">
+      <h2 class="section-title"><span class="hash">#</span> blog <span class="tag">coming soon</span></h2>
+      <p class="lead">Write-ups on real deployments — what broke, what worked, and what I learned. Planned topics:</p>
+      <ul class="blog-topics">
+        <li><span class="topic-tag">DPI</span> MOSIP on RKE2 — one-click cluster bootstrap lessons</li>
+        <li><span class="topic-tag">K8s</span> Argo CD + Helmfile GitOps patterns that survived production</li>
+        <li><span class="topic-tag">Telecom</span> Jasmin &amp; Kannel with Ethio Telecom SMSC — the gotchas</li>
+        <li><span class="topic-tag">Network</span> IPsec site-to-site with banks — debugging from the first phase</li>
+        <li><span class="topic-tag">Observability</span> EFK stack that actually scales</li>
+        <li><span class="topic-tag">AWS</span> Lambda + EventBridge patterns for async integrations</li>
+      </ul>
+    </section>
+
     <section id="contact" class="section">
       <h2 class="section-title"><span class="hash">#</span> contact</h2>
       <p class="lead">Open to cloud, DevOps, and platform engineering roles. Let's talk.</p>
@@ -228,13 +312,6 @@
           <div>
             <strong>Email</strong>
             <span>binwelbeck@gmail.com</span>
-          </div>
-        </a>
-        <a class="contact-card" href="tel:+251945496667">
-          <span class="contact-icon">📞</span>
-          <div>
-            <strong>Phone</strong>
-            <span>+251 945 496 667</span>
           </div>
         </a>
         <a class="contact-card" href="https://linkedin.com/in/binkid1" target="_blank" rel="noopener">
@@ -254,6 +331,76 @@
       </div>
     </section>
   </main>
+
+  <div class="modal" id="request-modal" aria-hidden="true" role="dialog" aria-labelledby="request-title">
+    <div class="modal-backdrop" data-close-request></div>
+    <div class="modal-panel" role="document">
+      <button class="modal-close" aria-label="Close" data-close-request>&times;</button>
+      <h3 id="request-title">Request a consultation</h3>
+      <p class="modal-sub">Fill this out and your email client will open with the details prefilled. I'll respond within 24 hours.</p>
+      <form id="request-form" class="request-form" novalidate>
+        <div class="form-row">
+          <label>
+            <span>Name *</span>
+            <input name="name" required />
+          </label>
+          <label>
+            <span>Email *</span>
+            <input type="email" name="email" required />
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            <span>Company / Org</span>
+            <input name="company" />
+          </label>
+          <label>
+            <span>Timeline</span>
+            <input name="timeline" placeholder="e.g. 2 weeks, Q3 2026" />
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            <span>Project type *</span>
+            <select name="project_type" required>
+              <option value="">Select…</option>
+              <option>AWS deployment</option>
+              <option>GCP deployment</option>
+              <option>Kubernetes platform (RKE2 / EKS / Argo CD)</option>
+              <option>Telecloud / Local cloud (Ethiopia)</option>
+              <option>SMS gateway (Jasmin / Kannel)</option>
+              <option>IPsec site-to-site VPN</option>
+              <option>Secure deploy + monitoring (Istio / EFK)</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>
+            <span>Engagement *</span>
+            <select name="engagement" required>
+              <option value="">Select…</option>
+              <option>One-time setup</option>
+              <option>Short contract</option>
+              <option>Long-term consultancy</option>
+              <option>Open to discussion</option>
+            </select>
+          </label>
+        </div>
+        <label>
+          <span>Budget (optional)</span>
+          <input name="budget" placeholder="e.g. $5k, TBD" />
+        </label>
+        <label>
+          <span>Message *</span>
+          <textarea name="message" rows="5" required placeholder="Briefly describe your goals, constraints, and any context…"></textarea>
+        </label>
+        <div class="form-actions">
+          <button type="button" class="btn btn-ghost" data-close-request>Cancel</button>
+          <button type="submit" class="btn btn-primary">Send via email</button>
+        </div>
+        <p class="form-hint">Submitting opens your email client (mailto) with the request prefilled to <strong>binwelbeck@gmail.com</strong>.</p>
+      </form>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="container">
